@@ -1,9 +1,5 @@
 const options = [
-    'newTabCourses',
-    'newTabLessons',
-    'largeSidebar',
-    'bookmarks',
-    'riseSchemaBtn',
+    'tagFilter',
 ];
 
 chrome.storage.sync.get(options, function (result) {

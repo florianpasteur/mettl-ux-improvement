@@ -45,7 +45,10 @@ function createHtmlButton(innerHtml, classList, onClick) {
 
 
 setInterval(() => {
-    updateNodes('', 'div[data-ba-course-id]', e => {
+    updateNodes('tagFilter', 'span.question-tag-name', e => {
+        e.addEventListener('click', function () {
+            console.log(e)
+        })
 
     });
 

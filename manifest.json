@@ -16,8 +16,7 @@
         "contentscript.js"
       ],
       "css": [
-        "style.css",
-        "mvp.css"
+        "style.css"
       ]
     }
   ],
