@@ -180,10 +180,10 @@ function renderQuestions(questions, map, reviewedQuestionCount, skillNodeName, i
         $('.right-container').css('min-height', $h);
     }
 
-    if (isLastPage)
+    // if (isLastPage)
         $('#question-wrapper ._show-more').remove();
-    else
-        qa.append('<div class="_show-more showMore"><button type="button" class="btn btn-default">Show More</button></div>');
+    // else
+    //     qa.append('<div class="_show-more showMore"><button type="button" class="btn btn-default">Show More</button></div>');
 
     $('#question-wrapper').off('click', '._show-more button').on('click', '._show-more button', function () {
         this.innerHTML = "Loading...";
@@ -242,7 +242,7 @@ function renderQuestions(questions, map, reviewedQuestionCount, skillNodeName, i
 }
 
 
-function getQuestionAndSkillSummary(tag) {
+function getQuestionAndSkillSummary(searchedTag) {
     const activeSkillNode = $('.activeSkillNode');
     const skillNodeId = activeSkillNode.data('id');
     const skillNodeName = activeSkillNode.parents('li').find('.name').text();
@@ -269,7 +269,7 @@ function getQuestionAndSkillSummary(tag) {
             n: pageNumber * 20,
             s: 20000,
             r: isFetchTree,
-            t: tag,
+            t: '',
             i: skillNodeId,
             qr: 'all'
         },
@@ -285,7 +285,9 @@ function getQuestionAndSkillSummary(tag) {
                 return;
             }
 
-            var newQuestions = JSON.parse(data.questions);
+            var newQuestions = JSON.parse(data.questions).filter(q => {
+                return !!(q.Tags || []).find(tags => tags.Name.toUpperCase() === searchedTag.toUpperCase())
+            });
 
             if (isAppend) {
                 questions = questions.concat(newQuestions);
