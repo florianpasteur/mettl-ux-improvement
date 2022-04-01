@@ -13,6 +13,8 @@
         "https://mettl.com/*"
       ],
       "js": [
+        "jquery-3.6.0.min.js",
+        "underscore-min.js",
         "contentscript.js"
       ],
       "css": [
