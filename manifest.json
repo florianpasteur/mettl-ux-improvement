@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Mettl UX Improvement Extension",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Add functionalities to Mettl to help navigate and use the site",
   "short_name": "Rise UX",
   "permissions": [
@@ -23,7 +23,8 @@
     }
   ],
   "web_accessible_resources": [
-    "style.css"
+    "style.css",
+    "public.js"
   ],
   "browser_action": {
     "default_title": "Settings",

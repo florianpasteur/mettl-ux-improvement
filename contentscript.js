@@ -423,3 +423,8 @@ ifEnabled('', () => {
 
     }, 10)
 })
+
+
+const script = document.createElement('script');
+script.src = chrome.extension.getURL(`public.js`);
+document.body.append(script);
