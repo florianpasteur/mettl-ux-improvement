@@ -2,3 +2,16 @@ span.question-tag-name {
     cursor: pointer;
     background-color: #0097fc;
 }
+
+
+#pane.container {
+    width: calc(940px + 120px);
+}
+
+ul#menu-tree, div#menu-top {
+    width: calc(260px + 120px);
+}
+
+#menu span.name {
+    max-width: none;
+}

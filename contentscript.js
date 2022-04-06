@@ -427,4 +427,4 @@ ifEnabled('', () => {
 
 const script = document.createElement('script');
 script.src = chrome.extension.getURL(`public.js`);
-document.body.append(script);
+document.head.append(script);
